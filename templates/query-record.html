@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <title>all information</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>all information</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>副本编号</th>
+                <th>借书人</th>
+                <th>借书日期</th>
+                <th>归还日期</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for a,b,c,d,e in data %}
+            <tr>
+                <td>{{ a }}</td>
+                <td>{{ b }}</td>
+                <td>{{ c }}</td>
+                <td>{{ d }}</td>
+                <td>{{ e }}</td>
+                <td>{{ f }}</td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/user/{{flaggg}}">返回</a>
+</body>
+</html>

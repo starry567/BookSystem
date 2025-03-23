@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <title>information</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>information</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>编号</th>
+                <th>书名</th>
+                <th>作者</th>
+                <th>出版社</th>
+                <th>出版时间</th>
+                <th>单价</th>
+                <th>状态</th>
+            </tr>
+        </thead>
+        <tbody>
+             {% for a,b,c,d,e,f in data %}
+            <tr>
+                <td>{{ a }}</td>
+                <td>{{ b }}</td>
+                <td>{{ c }}</td>
+                <td>{{ d }}</td>
+                <td>{{ e }}</td>
+                <td>{{ f }}</td>
+                <td>{{ result[loop.index0] }}</td>
+                <td>{{ h }}</td>
+            </tr>
+
+            {% endfor %}
+        </tbody>
+    </table>
+     <a href="/admin">返回</a>
+</body>
+</html>

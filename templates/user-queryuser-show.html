@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <title>图书管理系统</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>借阅状态</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>书籍信息编号</th>
+                <th>借阅中的状态</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for a in data %}
+            <tr>
+                <td>{{ a[0] }}</td>
+                <td>{{ data2[loop.index0] }}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+     <a href="/user/{{flaggg}}">返回</a>
+</body>
+</html>

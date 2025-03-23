@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    table {
+      font-family: Arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 15px;
+      text-align: left;
+    }
+
+    td {
+      border: 1px solid #ddd;
+      padding: 12px 15px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #e6e6e6;
+    }
+
+    /* 表单样式 */
+    .form-container {
+      background-color: #f1f1f1;
+      padding: 20px;
+      border-radius: 4px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .form-container select {
+      padding: 8px 12px;
+      border: none;
+      border-radius: 0;
+      margin-bottom: 10px;
+      width: 100%;
+      appearance: none;
+      background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+      background-repeat: no-repeat;
+      background-position: right 8px center;
+      background-size: 16px;
+    }
+
+    .form-container button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var formContainer = document.querySelector('.form-container');
+      var tableRows = document.querySelectorAll('table tr');
+      var operationSelect = document.querySelector('.form-container select');
+
+      tableRows.forEach(function(row) {
+        row.addEventListener('click', function() {
+          var operationId = parseInt(this.children[0].textContent);
+          if (operationId !== 0) {
+            formContainer.style.display = 'flex';
+            operationSelect.value = operationId;
+          } else {
+            formContainer.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>序号</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>0</td>
+        <td>退出</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>录入图书信息</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>删除图书信息</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>修改图书信息</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>查询某本图书信息和状态</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>查询任意用户借书状态</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>总览图书信息和状态</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="form-container">
+    <select class="form-container select">
+      <option value="0">退出</option>
+      <option value="1">录入图书信息</option>
+      <option value="2">删除图书信息</option>
+      <option value="3">修改图书信息</option>
+      <option value="4">查询某本图书信息和状态</option>
+      <option value="5">查询任意用户借书状态</option>
+      <option value="6">总览图书信息和状态</option>
+    </select>
+    <button type="submit">Submit</button>
+  </div>
+</body>
+</html>

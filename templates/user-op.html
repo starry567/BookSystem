@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    table {
+      font-family: Arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+      padding: 12px 15px;
+      text-align: left;
+    }
+    td {
+      border: 1px solid #ddd;
+      padding: 12px 15px;
+    }
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    tr:hover {
+      background-color: #e6e6e6;
+    }
+    /* 表单样式 */
+    form {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    input[type=number] {
+      padding: 8px 12px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>序号</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>0</td>
+        <td>退出用户界面</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>借书</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>还书</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>查询图书信息和状态</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>查询自己已借图书信息和状态</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>查询自己历史借阅记录(已归还)</td>
+      </tr>
+    </tbody>
+  </table>
+  <form method="post">
+    <label for="number-input">Enter a number:</label>
+    <input type="text" name="op">
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
