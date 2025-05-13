@@ -42,8 +42,8 @@ def adminlogin_required(func):
 def logout():
     username = session.get("username")
     # 登出操作
-    session.pop("username")
-    session.pop("is_login")
+    session.pop("username", None)
+    session.pop("is_login", None)
     session.clear()
     return redirect('/')
 
@@ -675,6 +675,7 @@ def user(username):
         #用户操作界面
         return render_template('user-op.html')
     op = request.form.get('op')
+    username = session["username"]
     #用户选择操作
     if op == '0':
         return redirect('/logout')
