@@ -172,21 +172,43 @@
 			}
 		}
 	</style>
+	<script>
+		function validateForm() {
+			const username = document.getElementById("username").value;
+			const password = document.getElementById("password").value;
+
+			const usernamePattern = /^[a-zA-Z0-9]{1,7}$/;
+			const passwordPattern = /^[a-zA-Z0-9!@#$%^&*()]{6,10}$/;
+
+			if (!usernamePattern.test(username)) {
+				alert("用户名只能包含字母和数字，长度为1到7位");
+				return false;
+			}
+
+			if (!passwordPattern.test(password)) {
+				alert("密码必须为6到10位，只能包含字母、数字和符号：!@#$%^&*()");
+				return false;
+			}
+
+			return true;
+		}
+	</script>
 </head>
 
 <body>
 	<div class="loginBox">
 		<h2>user-register</h2>
-		<form method="post">
+		<form method="post" onsubmit="return validateForm()">
 			<div class="item">
-				<input type="text" name="user" required>
+				<input type="text" id="username" name="user" required>
 				<label for="">userName</label>
 			</div>
 			<div class="item">
-				<input type="password" name="pwd" required>
+				<input type="password" id="password" name="pwd" required>
 				<label for="">password</label>
 			</div>
-			<button class="btn" name="=submit">register
+			<button class="btn" name="=submit">
+				register
 				<span></span>
 				<span></span>
 				<span></span>
